@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小明企業 - AI助手</title>
+  <link rel="stylesheet" href="Project02.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- AI小助手 -->
+  <button class="AIToggle" aria-label="開啟AI助手">
+    <i class="fas fa-robot"></i>
+  </button>
+  <div class="AIContainer">
+    <div class="ai-header">
+      <div class="ai-title">
+        <i class="fas fa-robot"></i>
+        <span>小明企業智能助手</span>
+      </div>
+      <div class="ai-minimize">
+        <i class="fas fa-times"></i>
+      </div>
+    </div>
+    <div class="ai-pages">
+      <div id="messagePage" class="ai-page active">
+        <div class="messageField">
+          <ul class="AIMessage">
+            <li>
+              <div class="chatbot-message">您好！我是小明企業的智能助手。有什麼我可以幫助您的嗎？</div>
+            </li>
+            <li>
+              <div class="chatbot-message">您可以透過下方的「功能」選單瀏覽我提供的各種服務，或直接在這裡提問。</div>
+            </li>
+          </ul>
+        </div>
+        <div class="AIMessageComposer">
+          <input type="text" class="AIMessageInput" placeholder="請輸入您的問題..." aria-label="訊息輸入框">
+          <button class="sendBtn" aria-label="發送訊息">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+      <div id="functionPage" class="ai-page">
+        <div class="ai-page-header">
+          <div class="ai-page-title">
+            <i class="fas fa-th-large"></i>
+            <span>功能選單</span>
+          </div>
+          <div class="ai-page-back" data-target="messagePage">
+            <i class="fas fa-arrow-left"></i>
+            <span>返回</span>
+          </div>
+        </div>
+        <div class="ai-function-group">
+          <h3>基本功能</h3>
+          <div class="ai-tools-grid">
+            <div class="ai-tool-item" data-tool="basic">
+              <i class="fas fa-info-circle"></i>
+              <span class="ai-tool-title">公司政策</span>
+            </div>
+            <div class="ai-tool-item" data-tool="tools">
+              <i class="fas fa-file-alt"></i>
+              <span class="ai-tool-title">申請表單</span>
+            </div>
+          </div>
+        </div>
+        <div class="ai-function-group">
+          <h3>時程管理</h3>
+          <div class="ai-tools-grid">
+            <div class="ai-tool-item" data-tool="schedule">
+              <i class="fas fa-calendar-alt"></i>
+              <span class="ai-tool-title">行事曆</span>
+            </div>
+            <div class="ai-tool-item" data-tool="files">
+              <i class="fas fa-file-archive"></i>
+              <span class="ai-tool-title">檔案處理</span>
+            </div>
+          </div>
+        </div>
+        <div class="ai-function-group">
+          <h3>員工協作</h3>
+          <div class="ai-tools-grid">
+            <div class="ai-tool-item" data-tool="meeting">
+              <i class="fas fa-users"></i>
+              <span class="ai-tool-title">會議提醒</span>
+            </div>
+            <div class="ai-tool-item" data-tool="team">
+              <i class="fas fa-project-diagram"></i>
+              <span class="ai-tool-title">團隊協作</span>
+            </div>
+            <div class="ai-tool-item" data-tool="docs">
+              <i class="fas fa-file-word"></i>
+              <span class="ai-tool-title">共享文檔</span>
+            </div>
+            <div class="ai-tool-item" data-tool="tasks">
+              <i class="fas fa-tasks"></i>
+              <span class="ai-tool-title">任務分配</span>
+            </div>
+          </div>
+        </div>
+        <div class="ai-function-group">
+          <h3>系統支援</h3>
+          <div class="ai-tools-grid">
+            <div class="ai-tool-item" data-tool="erp">
+              <i class="fas fa-database"></i>
+              <span class="ai-tool-title">ERP系統</span>
+            </div>
+            <div class="ai-tool-item" data-tool="crm">
+              <i class="fas fa-users-cog"></i>
+              <span class="ai-tool-title">CRM系統</span>
+            </div>
+            <div class="ai-tool-item" data-tool="hr">
+              <i class="fas fa-user-tie"></i>
+              <span class="ai-tool-title">人資系統</span>
+            </div>
+            <div class="ai-tool-item" data-tool="help">
+              <i class="fas fa-question-circle"></i>
+              <span class="ai-tool-title">IT支援</span>
+            </div>
+          </div>
+        </div>
+        <div class="ai-function-group">
+          <h3>文件管理</h3>
+          <div class="ai-tools-grid">
+            <div class="ai-tool-item" data-tool="storage">
+              <i class="fas fa-hdd"></i>
+              <span class="ai-tool-title">雲端儲存</span>
+            </div>
+            <div class="ai-tool-item" data-tool="ocr">
+              <i class="fas fa-file-image"></i>
+              <span class="ai-tool-title">文字識別</span>
+            </div>
+            <div class="ai-tool-item" data-tool="pdf">
+              <i class="fas fa-file-pdf"></i>
+              <span class="ai-tool-title">PDF處理</span>
+            </div>
+            <div class="ai-tool-item" data-tool="translate">
+              <i class="fas fa-language"></i>
+              <span class="ai-tool-title">文件翻譯</span>
+            </div>
+          </div>
+        </div>
+        <div class="ai-function-group">
+          <h3>個人工具</h3>
+          <div class="ai-tools-grid">
+            <div class="ai-tool-item" data-tool="todo">
+              <i class="fas fa-check-square"></i>
+              <span class="ai-tool-title">待辦事項</span>
+            </div>
+            <div class="ai-tool-item" data-tool="note">
+              <i class="fas fa-sticky-note"></i>
+              <span class="ai-tool-title">便利貼</span>
+            </div>
+            <div class="ai-tool-item" data-tool="calc">
+              <i class="fas fa-calculator"></i>
+              <span class="ai-tool-title">計算器</span>
+            </div>
+            <div class="ai-tool-item" data-tool="weather">
+              <i class="fas fa-cloud-sun"></i>
+              <span class="ai-tool-title">天氣查詢</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ai-bottom-nav">
+      <div class="ai-nav-item active" data-page="messagePage">
+        <i class="fas fa-comments"></i>
+        <span class="ai-nav-label">對話</span>
+      </div>
+      <div class="ai-nav-item" data-page="functionPage">
+        <i class="fas fa-th-large"></i>
+        <span class="ai-nav-label">功能</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="Project02.js"></script>
+</body>
+</html>
